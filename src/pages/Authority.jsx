@@ -98,7 +98,7 @@ function DetailModal({ complaint, onClose, onSave }) {
     async function fetchAI() {
       setAiLoading(true)
       try {
-        const res = await fetch('http://localhost:5000/ai/assign-officer', {
+        const res = await fetch('http://civicpulse-yus3.onrender.com/ai/assign-officer', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -350,7 +350,7 @@ function Dashboard({ onLogout }) {
     // Send SMS notification to citizen
     if (['In Progress', 'Resolved', 'Rejected'].includes(update.status) && base.phone) {
       try {
-        await fetch('http://localhost:5000/notify/status', {
+        await fetch('http://civicpulse-yus3.onrender.com/notify/status', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
