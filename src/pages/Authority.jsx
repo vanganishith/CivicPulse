@@ -383,7 +383,7 @@ function Dashboard({ onLogout }) {
 
   return (
     <div className="app show">
-      <Navbar/>
+      <Navbar variant='authority'/>
 
       <div className="tab-nav">
         {TABS.map(({ key, label, Icon }) => (
