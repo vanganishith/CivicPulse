@@ -30,17 +30,17 @@ export const STATUS_CLASS = {
 export const ANALYTICS_SEED = []
 
 export async function getStoredComplaints() {
-  const res = await fetch("http://civicpulse-yus3.onrender.com/complaints")
+  const res = await fetch("https://civicpulse-yus3.onrender.com/complaints")
   return await res.json()
 }
 
 export async function getAllComplaints() {
-  const res = await fetch("http://civicpulse-yus3.onrender.com/complaints");
+  const res = await fetch("https://civicpulse-yus3.onrender.com/complaints");
   return await res.json();
 }
 
 export async function createComplaint(data) {
-  const res = await fetch("http://civicpulse-yus3.onrender.com/complaints", {
+  const res = await fetch("https://civicpulse-yus3.onrender.com/complaints", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -51,7 +51,7 @@ export async function createComplaint(data) {
 }
 
 export async function saveComplaint(id, update) {
-  const res = await fetch(`http://civicpulse-yus3.onrender.com/complaints/${id}`, {
+  const res = await fetch(`https://civicpulse-yus3.onrender.com/complaints/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(update)

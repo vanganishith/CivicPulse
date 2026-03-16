@@ -114,7 +114,7 @@ export default function Submit() {
     }
     setOtpLoading(true)
     try {
-      const res  = await fetch('http://civicpulse-yus3.onrender.com/otp/send', {
+      const res  = await fetch('https://civicpulse-yus3.onrender.com/otp/send', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ phone: form.phone })
@@ -138,7 +138,7 @@ export default function Submit() {
   async function verifyOTP() {
     setOtpLoading(true)
     try {
-      const res  = await fetch('http://civicpulse-yus3.onrender.com/otp/verify', {
+      const res  = await fetch('https://civicpulse-yus3.onrender.com/otp/verify', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ phone: form.phone, otp: otp.join('') })
@@ -200,7 +200,7 @@ export default function Submit() {
     const isOther = category.includes('Other')
     if (!isOther) {
       try {
-        const all = await fetch('http://civicpulse-yus3.onrender.com/complaints').then(r => r.json())
+        const all = await fetch('https://civicpulse-yus3.onrender.com/complaints').then(r => r.json())
         const duplicate = all.find(c =>
           c.category === category &&
           Math.abs(parseFloat(c.lat) - parseFloat(form.lat)) < 0.001 &&
@@ -253,7 +253,7 @@ export default function Submit() {
     }
 
     try {
-      const res = await fetch('http://civicpulse-yus3.onrender.com/complaints', {
+      const res = await fetch('https://civicpulse-yus3.onrender.com/complaints', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(complaintData)

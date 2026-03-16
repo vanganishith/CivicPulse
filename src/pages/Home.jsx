@@ -73,7 +73,7 @@ export default function Home() {
   useEffect(() => {
     async function loadStats() {
       try {
-        const res = await fetch('http://civicpulse-yus3.onrender.com/complaints')
+        const res = await fetch('https://civicpulse-yus3.onrender.com/complaints')
         const data = await res.json()
         const total = data.length
         const resolved = data.filter(c => c.status === 'Resolved').length
