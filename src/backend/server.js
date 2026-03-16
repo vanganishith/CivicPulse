@@ -18,6 +18,9 @@ app.use("/ai", aiRoutes);
 app.use("/notify", notifyRoutes);
 
 const PORT = process.env.PORT || 5000;
+app.get("/", (req, res) => {
+  res.send("CivicPulse API is running 🚀");
+});
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
